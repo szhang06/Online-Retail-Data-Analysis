@@ -1,4 +1,4 @@
-# Online-Sales-Data-Analysis [Ongoing]
+# Online-Retail-Data-Analysis [Ongoing]
 
 **1. Introduction**
 
