@@ -1,4 +1,4 @@
-# Online-Sales-Data-Analysis
+# Online-Sales-Data-Analysis [Ongoing]
 
 **1. Introduction**
 
@@ -6,7 +6,7 @@ This report presents an analysis of online retail data to identify valuable sale
 
 **2. Data Overview and Cleaning**
 
-The dataset used for this analysis is the "online\_retail\_II.xlsx" file. Initial data exploration revealed issues such as negative prices, missing values, and duplicate records. Data cleaning steps were implemented to address these issues, including:
+The dataset used for this analysis is the ["online\_retail\_II.xlsx"](https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset?resource=download) file from kaggle. Initial data exploration revealed issues such as negative prices, missing values, and duplicate records. Data cleaning steps were implemented to address these issues, including:
 
 * Removing duplicate rows.
 * Handling missing values in 'CustomerID' and 'Description' columns.
