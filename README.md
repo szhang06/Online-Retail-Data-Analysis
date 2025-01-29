@@ -1,66 +1,56 @@
-# Online-Retail-Data-Analysis [Ongoing]
+# Customer Segmentation and Sales Analysis
 
-**1. Introduction**
+## 1. Introduction
 
-This report presents an analysis of online retail data to identify valuable sales, products and customer segments for targeted marketing and business strategies. The analysis utilizes data cleaning, exploratory data analysis (EDA), RFM modeling, clustering techniques, Customer Lifetime Value (CLTV) analysis, and cohort analysis to uncover key insights.
+This project presents an analysis of an online retail sales data. The analysis encompassed product performance, sales by country, customer behavior, customer segmentation, and cohort analysis.
 
-**2. Data Overview and Cleaning**
+## 2. Data Overview and Cleaning
 
-The dataset used for this analysis is the ["online\_retail\_II.xlsx"](https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset?resource=download) file from kaggle. Initial data exploration revealed issues such as negative prices, missing values, and duplicate records. Data cleaning steps were implemented to address these issues, including:
+The dataset used for this analysis is the ["online\_retail\_II.xlsx"](https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset?resource=download) file from Kaggle. Initial data exploration revealed issues such as negative prices, missing values, and duplicate records. Data cleaning steps were implemented to address these issues, including:
 
 * Removing duplicate rows.
 * Handling missing values in 'CustomerID' and 'Description' columns.
 * Filtering out records with negative quantity and price.
 * Converting 'CustomerID' to integer type.
 
-**3. Exploratory Data Analysis (EDA)**
+## 3. Insights and Recommendations
 
-EDA was performed to understand the data's underlying patterns and trends. Key findings include:
+### 3.1. Product Performance
 
-* **Sales Trends:** Sales peak between September and December, with the highest sales occurring in November. Week 49, close to the Christmas holiday, experiences the largest sales. Customer purchasing activity is lowest on weekends, with almost no sales on Saturdays.
-* **Product Performance:** The top 10 products by sales and quantity were identified, revealing potential bestsellers and high-demand items.
-* **Country-wise Sales:** The UK accounts for the largest portion of sales, followed by EIRE, Netherlands, Germany, and France. Each country exhibits different top-selling products, suggesting opportunities for personalized marketing campaigns.
-* **Customer Behavior:** Top customers by sales were identified, and their purchase trends were analyzed over time.
+* **Top Products:** The top 10 products by sales and quantity differ, with only three products appearing in both lists. This suggests that sales volume and product popularity are not always aligned. Further investigation into the price points of these products could provide additional insights.
+* **Sales Concentration:** The top 10 products account for only 10.46% of total sales. This indicates a long tail of less popular products, potentially requiring different marketing or inventory strategies.
 
-**4. Customer Segmentation**
+**Recommendation:** Diversify marketing efforts beyond the top 10 products. Analyze the profitability of the long tail and consider strategies for optimizing inventory management.
 
-**4.1 RFM Modeling**
+### 3.2. Geographic Performance
 
-RFM (Recency, Frequency, Monetary) modeling was employed to segment customers based on their purchase behavior. Customers were assigned scores for Recency, Frequency, and Monetary value, and these scores were combined to create segments such as "Champions," "Loyal Customers," and "Potential Loyalists."
+* **Key Markets:** The UK is the primary market, followed by EIRE, the Netherlands, Germany, and France. A treemap visualization clearly highlights the UK's dominance.
+* **Localized Preferences:** Each country exhibits distinct product preferences. This underscores the need for localized marketing strategies.
 
-**4.2 Clustering**
+**Recommendation:** Tailor marketing campaigns to specific countries, highlighting products popular in each region. Further research into cultural preferences within each country can enhance these efforts.
 
-K-means clustering was applied to segment customers based on their RFM values. The Elbow method was used to determine the optimal number of clusters (k). Customers were assigned to clusters based on their similarity in RFM characteristics.
+### 3.3. Customer Behavior
 
-**5. Customer Lifetime Value (CLTV) Analysis**
+* **High-Value Customers:** Top customers show a positive correlation between sales and quantity purchased. However, their purchasing patterns do not exhibit clear seasonality.
+* **Geographic Concentration:** Eight out of the top ten customers are from the UK, with the Netherlands representing the second-largest customer base.
 
-CLTV analysis was conducted to estimate the total revenue a customer is expected to generate over their lifespan. Average purchase value, average purchase frequency, and an estimated customer lifespan were used to calculate CLTV for each customer segment. The analysis revealed the most valuable customer groups in terms of long-term revenue potential.
+**Recommendation:** Implement loyalty programs targeted at high-value customers. Explore upselling opportunities for those customers. Analyze the UK market's high customer concentration further for potential opportunities and expansion strategies.
 
-**6. Cohort Analysis**
+### 3.4. Customer Segmentation
 
-Cohort analysis was performed to track the behavior of customer groups acquired at different times. Cohorts were defined based on the month of the customer's first purchase. Retention rates were calculated and visualized using a heatmap to understand how customer behavior changes over time.
+* **Clustering Results:** K-means clustering identified three distinct customer segments based on Recency, Frequency, and Monetary Value (RFM).
+  + **Cluster 2:** High-value customers with high monetary value and short recency but relatively low frequency.
+  + **Cluster 1:** Low-value customers with a long recency and low frequency (single purchase).
+  + **Cluster 0:** Represents the majority and remaining customers.
+* **Cluster Dynamics:** Cluster 2 demonstrates stable purchasing patterns, while Cluster 1 shows a temporary uptick before ceasing activity in July 2020. This suggests the need to investigate the reasons behind Cluster 1's churn.
+* **Product Preferences:** Clusters have distinct product preferences, indicating opportunities for targeted marketing.
 
-**7. Results and Insights**
+**Recommendation:** Develop targeted marketing strategies for each cluster. Investigate the drivers of customer churn in Cluster 1 to design retention programs and potentially improve product offerings.
 
-* **RFM Segmentation:** The RFM model revealed the distribution of customers across different segments, highlighting valuable customer groups such as "Champions" and "Loyal Customers."
-* **Clustering Segmentation:** Clustering analysis provided further granularity by grouping customers based on their RFM profiles. The analysis of cluster characteristics identified distinct customer behaviors and purchase patterns.
-* **Sales Trends:** Sales trends were analyzed by segment and cluster, revealing variations in purchase patterns over time.
-* **Product Preferences:** Top products purchased by each segment and cluster were identified, providing insights for targeted product recommendations.
-* **CLTV Insights:** CLTV analysis identified the customer segments with the highest long-term revenue potential, enabling prioritization of marketing efforts.
-* **Cohort Analysis:** Cohort analysis revealed trends in customer retention and provided insights into how customer behavior evolves over time.
+### 3.5. Cohort Analysis
 
-**8. Recommendations**
+* **Retention Trends:** Retention rates generally decline over time, but the December 2009 cohort shows significantly higher retention and re-engagement, suggesting a highly effective strategy. Conversely, several mid-2010 cohorts exhibit exceptionally low retention, particularly November 2010.
+* **Cohort Performance Variation:** Significant differences in cohort performance highlight the importance of understanding the context and factors affecting customer engagement during different periods.
 
-Based on the analysis, the following recommendations are proposed:
+**Recommendation:** Analyze the December 2009 cohort to identify successful practices that could be replicated. Investigate potential causes for the lower retention in the mid-2010 cohorts, which might include external factors, changes in market conditions, or product updates. Improve initial engagement strategies to minimize early customer churn.
 
-* **Targeted Marketing:** Develop personalized marketing campaigns for each customer segment and cluster, focusing on their specific needs and preferences.
-* **Product Recommendations:** Utilize product preference insights to offer targeted product recommendations to customers, enhancing cross-selling and upselling opportunities.
-* **Customer Retention:** Implement strategies to retain valuable customer segments, such as loyalty programs and personalized offers.
-* **Customer Acquisition:** Explore opportunities to acquire new customers with similar characteristics to existing high-value segments.
-* **CLTV Optimization:** Focus on acquiring and retaining customers from high-CLTV segments to maximize long-term revenue.
-* **Cohort-Based Engagement:** Develop targeted engagement strategies for different cohorts based on their retention patterns.
-* **Further Analysis:** Conduct deeper analysis of customer demographics, browsing behavior, and other data points to further refine segmentation strategies.
-
-**9. Conclusion**
-
-This analysis has provided valuable insights into online retail customer behavior and segmentation. By leveraging these insights, businesses can develop targeted strategies to improve customer relationships, optimize marketing efforts, and drive business growth. Continued analysis and refinement of segmentation approaches will be crucial for maximizing customer lifetime value and achieving long-term success.
